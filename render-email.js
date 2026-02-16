@@ -14,6 +14,9 @@ if (!mdFile || !fs.existsSync(mdFile)) {
 const md = fs.readFileSync(mdFile, 'utf-8');
 const template = fs.readFileSync(path.join(__dirname, 'briefing-template.html'), 'utf-8');
 
+// Machine name — set via env var or defaults to hostname
+const machineName = process.env.BRIEFING_MACHINE || require('os').hostname().split('.')[0];
+
 // --- Style constants ---
 const S = {
   title: "font-family:Georgia, 'Times New Roman', serif; font-size:26px; color:#1a1a1a; font-weight:bold; line-height:1.3;",
@@ -240,6 +243,8 @@ const html = template
   .replace('{{SUBJECT}}', subject)
   .replace('{{DATE_WEATHER_LINE}}', mdToHtml(dateWeatherLine))
   .replace('{{BODY_HTML}}', bodyHtml)
+  .replace('{{HEADER_LABEL}}', `TRANSMISSION FROM ${machineName.toUpperCase()}`)
+  .replace('{{FOOTER_LABEL}}', `transmitted from ${machineName.toLowerCase()}`)
   .replace('{{SIGNOFF_HTML}}', signoffHtml)
   .replace('{{DATE_SHORT}}', dateShort);
 

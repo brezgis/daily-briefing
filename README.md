@@ -62,7 +62,7 @@ The email version uses a styled HTML template with a warm terminal-letter aesthe
 - Warm near-white card on a parchment-toned background
 - Dashed section dividers
 - Styled blockquotes, links, and code snippets
-- "TRANSMISSION FROM NORTH" header
+- "TRANSMISSION FROM [YOUR MACHINE]" header (auto-detects hostname, or set `BRIEFING_MACHINE` env var)
 
 The renderer (`render-email.js`) converts briefing markdown to HTML automatically. It handles:
 - `**Bold Title**` → large serif heading
