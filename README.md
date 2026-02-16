@@ -7,9 +7,15 @@ Built for [OpenClaw](https://github.com/openclaw/openclaw) agents, but the proto
 ## What It Looks Like
 
 <p align="center">
-  <img src="assets/screenshot-top.png" width="360" alt="Briefing header and main story">
-  <img src="assets/screenshot-bottom.png" width="360" alt="In Brief section and footer">
+  <img src="assets/screenshot-desktop.png" width="700" alt="Briefing email — desktop view">
 </p>
+<details>
+<summary>Mobile view</summary>
+<p align="center">
+  <img src="assets/screenshot-top.png" width="340" alt="Mobile — header and main story">
+  <img src="assets/screenshot-bottom.png" width="340" alt="Mobile — In Brief and footer">
+</p>
+</details>
 
 ## Philosophy
 
