@@ -35,11 +35,11 @@ const S = {
 // --- Markdown to HTML ---
 function mdToHtml(text) {
   return text
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, `<a href="$2" style="${S.link}">$1</a>`)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, `<a class="link" href="$2" style="${S.link}">$1</a>`)
     .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-    .replace(/\*\*(.+?)\*\*/g, `<strong style="color:${S.boldColor};">$1</strong>`)
+    .replace(/\*\*(.+?)\*\*/g, `<strong class="bold-text" style="color:${S.boldColor};">$1</strong>`)
     .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/`([^`]+)`/g, `<code style="background-color:${S.codeBg}; padding:1px 4px; border-radius:2px; font-size:12px;">$1</code>`)
+    .replace(/`([^`]+)`/g, `<code class="code-bg" style="background-color:${S.codeBg}; padding:1px 4px; border-radius:2px; font-size:12px;">$1</code>`)
     .replace(/\u201c/g, '&ldquo;').replace(/\u201d/g, '&rdquo;')
     .replace(/\u2019/g, '&rsquo;').replace(/\u2018/g, '&lsquo;')
     .replace(/\u2014/g, '&mdash;').replace(/\u2013/g, '&ndash;')
@@ -48,8 +48,8 @@ function mdToHtml(text) {
 
 function renderBlockquote(text) {
   return `<table role="presentation" cellpadding="0" cellspacing="0" style="margin:20px 0;">
-<tr><td style="width:3px; background-color:${S.blockquoteBorder};"></td>
-<td style="padding:8px 16px; font-family:'Courier New', Courier, monospace; font-size:13px; color:${S.blockquoteColor}; line-height:1.7; font-style:italic;">
+<tr><td class="blockquote-border" style="width:3px; background-color:${S.blockquoteBorder};"></td>
+<td class="blockquote-text" style="padding:8px 16px; font-family:'Courier New', Courier, monospace; font-size:13px; color:${S.blockquoteColor}; line-height:1.7; font-style:italic;">
 ${mdToHtml(text)}</td></tr></table>`;
 }
 
@@ -67,19 +67,19 @@ function renderParas(text, style) {
 }
 
 function divider() {
-  return `<tr><td style="padding:28px 32px 0 32px;"><div style="border-top:1px dashed ${S.divider};"></div></td></tr>`;
+  return `<tr><td style="padding:28px 32px 0 32px;"><div class="divider" style="border-top:1px dashed ${S.divider};"></div></td></tr>`;
 }
 
 function storyTitle(title) {
-  return `<tr><td style="padding:28px 32px 0 32px;"><div style="${S.title}"><b>${title}</b></div></td></tr>`;
+  return `<tr><td style="padding:28px 32px 0 32px;"><div class="story-title" style="${S.title}"><b>${title}</b></div></td></tr>`;
 }
 
 function h3Title(title) {
-  return `<tr><td style="padding:24px 32px 0 32px;"><div style="${S.h3}"><b>${title}</b></div></td></tr>`;
+  return `<tr><td style="padding:24px 32px 0 32px;"><div class="story-title" style="${S.h3}"><b>${title}</b></div></td></tr>`;
 }
 
 function bodyBlock(html) {
-  return `<tr><td style="padding:16px 32px 0 32px; ${S.body}">${html}</td></tr>`;
+  return `<tr><td class="body-text" style="padding:16px 32px 0 32px; ${S.body}">${html}</td></tr>`;
 }
 
 // --- Parse the markdown into sections ---
@@ -219,8 +219,7 @@ for (const sec of sections) {
     needsDivider = true;
   }
   else if (sec.type === 'brief') {
-    bodyHtml += `<tr><td style="padding:20px 32px 0 32px;"><div style="${S.meta}; margin-bottom:16px;">IN BRIEF</div>`;
-    // Split brief items by double newline
+    bodyHtml += `<tr><td class="brief-text" style="padding:20px 32px 0 32px;"><div class="meta-label" style="${S.meta}; margin-bottom:16px;">IN BRIEF</div>`;
     const items = sec.body.split(/\n\n+/).filter(i => i.trim());
     bodyHtml += items.map(item =>
       `<p style="margin:0 0 14px 0; ${S.brief}">${mdToHtml(item.trim())}</p>`
@@ -229,11 +228,11 @@ for (const sec of sections) {
     needsDivider = true;
   }
   else if (sec.type === 'postscript') {
-    bodyHtml += `<tr><td style="padding:20px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:13px; color:#555; line-height:1.7; font-style:italic;">${mdToHtml(sec.body)}</td></tr>`;
+    bodyHtml += `<tr><td class="postscript" style="padding:20px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:13px; color:#555; line-height:1.7; font-style:italic;">${mdToHtml(sec.body)}</td></tr>`;
     needsDivider = false;
   }
   else if (sec.type === 'signoff') {
-    signoffHtml = `<tr><td style="padding:20px 32px 32px 32px; font-family:'Courier New', Courier, monospace; font-size:14px; color:#444;">${mdToHtml(sec.body)}</td></tr>`;
+    signoffHtml = `<tr><td class="signoff" style="padding:20px 32px 32px 32px; font-family:'Courier New', Courier, monospace; font-size:14px; color:#444;">${mdToHtml(sec.body)}</td></tr>`;
     needsDivider = false;
   }
 }

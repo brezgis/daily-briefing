@@ -4,32 +4,60 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{SUBJECT}}</title>
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<style type="text/css">
+  :root { color-scheme: light dark; }
+  @media (prefers-color-scheme: dark) {
+    .outer-bg { background-color: #1a1a1a !important; }
+    .card { background-color: #2a2824 !important; border-color: #3d3a34 !important; }
+    .header-label { color: #9a9080 !important; }
+    .header-rule { border-color: #3d3a34 !important; }
+    .date-line { color: #c8c0b4 !important; }
+    .story-title { color: #f0ece4 !important; }
+    .body-text { color: #d8d0c4 !important; }
+    .body-text p { color: #d8d0c4 !important; }
+    .body-text strong { color: #f0ece4 !important; }
+    .brief-text { color: #d8d0c4 !important; }
+    .brief-text p { color: #d8d0c4 !important; }
+    .brief-text strong { color: #f0ece4 !important; }
+    .divider { border-color: #3d3a34 !important; }
+    .meta-label { color: #9a9080 !important; }
+    .blockquote-border { background-color: #3d3a34 !important; }
+    .blockquote-text { color: #b8b0a4 !important; }
+    .link { color: #c8a870 !important; }
+    .code-bg { background-color: #3d3a34 !important; color: #d8d0c4 !important; }
+    .signoff { color: #b8b0a4 !important; }
+    .postscript { color: #a8a094 !important; }
+    .footer { color: #706858 !important; }
+  }
+</style>
 </head>
-<body style="margin:0; padding:0; background-color:#e0dbd3; font-family:'Courier New', Courier, monospace;">
+<body class="outer-bg" style="margin:0; padding:0; background-color:#e0dbd3; font-family:'Courier New', Courier, monospace;">
 
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#e0dbd3;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="outer-bg" style="background-color:#e0dbd3;">
 <tr><td align="center" style="padding:24px 12px;">
 
 <!-- Card -->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px; background-color:#faf9f7; border:1px solid #d4cfc7; border-radius:2px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="card" style="max-width:640px; background-color:#faf9f7; border:1px solid #d4cfc7; border-radius:2px;">
 
 <!-- Header -->
 <tr><td style="padding:32px 32px 0 32px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
   <tr>
-    <td style="font-family:'Courier New', Courier, monospace; font-size:11px; color:#8a7f6e; letter-spacing:2px; text-transform:uppercase;">{{HEADER_LABEL}}</td>
-    <td align="right" style="font-family:'Courier New', Courier, monospace; font-size:11px; color:#8a7f6e;">🌙</td>
+    <td class="header-label" style="font-family:'Courier New', Courier, monospace; font-size:11px; color:#8a7f6e; letter-spacing:2px; text-transform:uppercase;">{{HEADER_LABEL}}</td>
+    <td align="right" class="header-label" style="font-family:'Courier New', Courier, monospace; font-size:11px; color:#8a7f6e;">🌙</td>
   </tr>
   </table>
 </td></tr>
-<tr><td style="padding:12px 32px 0 32px;"><div style="border-top:1px solid #d4cfc7;"></div></td></tr>
+<tr><td style="padding:12px 32px 0 32px;"><div class="header-rule" style="border-top:1px solid #d4cfc7;"></div></td></tr>
 
 <!-- Date -->
-<tr><td style="padding:16px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:14px; color:#444; line-height:1.6;">
+<tr><td class="date-line" style="padding:16px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:14px; color:#444; line-height:1.6;">
   {{DATE_WEATHER_LINE}}
 </td></tr>
 
-<!-- Body (stories, small stories, brief, postscript — all rendered by JS) -->
+<!-- Body -->
 {{BODY_HTML}}
 
 <!-- Sign-off -->
@@ -39,7 +67,7 @@
 
 <!-- Footer -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:640px;">
-<tr><td style="padding:16px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:10px; color:#a89e8c; text-align:center;">
+<tr><td class="footer" style="padding:16px 32px 0 32px; font-family:'Courier New', Courier, monospace; font-size:10px; color:#a89e8c; text-align:center;">
   {{FOOTER_LABEL}} · {{DATE_SHORT}}
 </td></tr>
 </table>
