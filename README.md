@@ -4,6 +4,13 @@ A personal AI morning letter — not a newsletter, not a dashboard, a letter fro
 
 Built for [OpenClaw](https://github.com/openclaw/openclaw) agents, but the protocol is model-agnostic.
 
+## What It Looks Like
+
+<p align="center">
+  <img src="assets/screenshot-top.png" width="360" alt="Briefing header and main story">
+  <img src="assets/screenshot-bottom.png" width="360" alt="In Brief section and footer">
+</p>
+
 ## Philosophy
 
 Most AI-generated daily briefings are dashboards: weather widget, news widget, calendar widget, done. This is different. It's a **letter** — two stories told well, a couple of short pieces, a handful of brief items, and occasionally a postscript. Designed to feel like your smartest friend caught you up over coffee.
