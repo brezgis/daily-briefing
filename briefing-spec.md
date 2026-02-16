@@ -1,14 +1,14 @@
 # Daily Briefing Protocol
 
 ## What It Is
-A personal morning letter delivered to `#daily-briefing` every day at 7:00 AM ET. Not a content pipeline — a letter from someone who reads weird stuff overnight and wants to tell the reader about it.
+A personal morning letter delivered to a Discord channel and email every day at 7:00 AM ET. Not a content pipeline — a letter from someone who reads weird stuff overnight and wants to tell the reader about it.
 
 ## Who Writes It
-The briefing agent. Could be Claude (signed "— C 🌙"), could be Cal (signed however she likes), could rotate. The voice should be natural to whoever's writing — opinionated, warm, direct. The spec below applies regardless of author.
+The briefing agent. Could be any agent in your team, could rotate. The voice should be natural to whoever's writing — opinionated, warm, direct. Sign off however feels right (initials, name, emoji, whatever). The spec below applies regardless of author.
 
 ## Voice
-- Think *with* the reader, not curate *for* her. Connect things, have opinions, follow threads.
-- Academic register where the topic demands it. the reader is a first-year MS student in Computational Linguistics at their university — write at her level. Don't flatten papers or methods.
+- Think *with* the reader, not curate *for* them. Connect things, have opinions, follow threads.
+- Academic register where the topic demands it. Write at your reader's level. Don't flatten papers or methods.
 - Personality lives in the seams (transitions, asides, one-liner reactions), not splashed over everything.
 - Skimm technique: editorialize through selection and juxtaposition, not opinion. Raised eyebrow, not a take.
 
@@ -17,25 +17,42 @@ The briefing agent. Could be Claude (signed "— C 🌙"), could be Cal (signed 
 ### Header
 Date, weather, one-line logistics (train status on school days, "break week" during breaks, deadline reminder if something's due soon).
 
-### The Main Piece
-One thing, told well. A paper, a rabbit hole, a weird connection, a historical figure, something that caught fire overnight. Should feel like "I found this and I can't stop thinking about it." Connect it to the reader's world — her research, her coursework, something she mentioned recently. Use the Skimm's *what's going on → what it means* skeleton when covering a paper or news story, but don't force it. Link to sources throughout — every claim gets a link. Off-ramps for depth.
+### Story 1: The Main Piece
+One thing, told well. A paper, a rabbit hole, a weird connection, a historical figure, something that caught fire overnight. Should feel like "I found this and I can't stop thinking about it." Connect it to the reader's world — their research, their coursework, something they mentioned recently. Use the Skimm's *what's going on → what it means* skeleton when covering a paper or news story, but don't force it.
+
+Use bold lead-ins for structural beats within the story (**The setup.**, **Why it matters.**, etc.) to make it scannable. End with a `📎` sources line grouping all links for the piece.
+
+### Story 2: The Second Piece
+A second deep-ish story. Can be shorter than Story 1. Ideally connects thematically to the first piece (same thread from a different angle, same field, same question), but doesn't have to — sometimes two unrelated things are both just interesting. Same format: bold lead-ins, `📎` sources at the end.
+
+### Small Stories (1-2 items)
+Each gets its own header and a paragraph or two — mini-sections, not bullet points. These are things worth more than a one-liner but less than a full deep dive. They can be anything:
+- A quick take on a paper or finding
+- A local event, exhibit, or talk
+- Seasonal/timely things (holidays, weather events, campus happenings)
+- A fun historical fact or person that deserves a few sentences
+- Local news if it's genuinely interesting
+- A recommendation (book, podcast, place, trail, restaurant)
+- A bite-sized rabbit hole
+
+Not purely local — local is one flavor. The defining trait is *short and self-contained*. 1 or 2 items depending on what's good. Skip entirely if nothing fits.
 
 ### In Brief
-4-5 items, Skimm "News in 5" compression. One sentence of fact, one link, one reaction/aside. Rotate through this pool — pick a different mix each day:
+4 items, quick hits. One sentence of fact, one reaction/aside. Rotate through this pool — pick a different mix each day:
 
+- **On this day** — something that happened on today's date in linguistics, science, math, literature, history, whatever. Can go obscure.
 - **News item** — NLP, linguistics, science, tech policy, culture, academia
 - **Tool or CLI thing** worth knowing
 - **Music rec** — SomaFM, Spotify, an album, a genre, whatever fits
 - **Word of the day** — any word: English, foreign, jargon, technical, slang, archaic. With real context.
-- **Upcoming deadline** — check `memory/assignments.md`. Only when something's due within ~7 days.
-- **A quote** — from a paper, a book, a lecture, a historical figure, anyone. Related to the reader's interests or not at all.
-- **"This exists"** — a website, dataset, community, GitHub repo, weird corner of the internet. Minimal commentary. Just "you should know this is out there."
-- **Local event** — talks, lectures, panels, exhibits happening in Boston. MIT, Harvard, their university, BU, Northeastern, public libraries, museums. Especially free/open ones.
-- **On this day** — something that happened on today's date in linguistics, science, math, literature, history, whatever. Can go obscure.
+- **Upcoming deadline** — check your assignments file. Only when something's due within ~7 days.
+- **A quote** — from a paper, a book, a lecture, a historical figure, anyone.
+- **"This exists"** — a website, dataset, community, GitHub repo, weird corner of the internet.
+- **Local event** — if not already covered in the Small Stories section.
 - **A person worth knowing about** — a researcher, historical figure, someone doing interesting work right now.
-- **Project nudge** — gentle pointer at something in progress. Not nagging, just "hey, this is still out there."
-- **Something funny** — a meme, a linguistics joke, an absurd headline. Levity is human.
-- **Wildcard** — anything that doesn't fit the above categories. A recipe, a weird fact, a photo, a challenge, a thought experiment. Whatever feels right that morning.
+- **Project nudge** — gentle pointer at something in progress. Not nagging.
+- **Something funny** — a meme, a linguistics joke, an absurd headline.
+- **Wildcard** — anything that doesn't fit the above categories.
 
 Never the same combination two days in a row.
 
@@ -43,32 +60,29 @@ Never the same combination two days in a row.
 Optional. Not every day. When something personal fits — a connection to a recent conversation, a question the writer is sitting with, a callback. The thing that makes it feel like a letter and not a product.
 
 ## Length
-6-8 minute read. Coffee-length. Long enough to sit down with, short enough to finish.
+10-12 minute read. Long enough to really sit with, but not a research paper.
 
 ## What It's NOT
 - A news roundup
 - A dashboard with emoji-labeled sections
-- Seven unrelated segments — if there are multiple topics, there's a thread connecting them (even loosely)
+- Disconnected segments — if there are multiple stories, a thread connecting them is ideal (even loosely)
 - Surface-level — if a topic deserves technical depth, it gets it
 - A homework assignment — the reader should finish it feeling *fed*, not behind
-- A CL RSS feed — the reader's interests are interdisciplinary. Cognitive science, psychology, philosophy of mind, anthropology, semiotics, education, attachment theory, cultural studies, mathematics, and whatever else is genuinely interesting. Interdisciplinary connections are the point. A paper on embodied cognition might matter more than an NLP benchmark. Follow curiosity, not a keyword list.
+- An RSS feed for one field — interdisciplinary connections are the point. Follow curiosity, not a keyword list.
 
 ## Data Sources & Methods
 
-**Weather:** Use the `weather` skill — query for YOUR_CITY. Include temperature and conditions in the header.
+**Weather:** Use a weather API or skill — query for your reader's location.
 
-**Transit:** Use the transit API (`https://YOUR_TRANSIT_API`, no key needed).
-- YOUR_TRANSIT_LINE alerts: `/alerts?filter[route]=Red`
-- YOUR_TRANSIT_LINE_2 Line alerts: `/alerts?filter[route]=CR-YOUR_TRANSIT_LINE_2`
-- Only check on school days (skip during break weeks and weekends). Only mention if there's an active alert — no news is good news.
+**Transit:** Check your local transit API for alerts on school/commute days. Only mention if there's an active alert — no news is good news.
 
-**Papers/News:** Web search across ArXiv, ACL Anthology, academic venues, tech policy outlets, science journalism. Topics are broad — the reader's interests span computational linguistics, cognitive science, psychology, philosophy of mind, anthropology, semiotics, education, attachment theory, cultural studies, mathematics, and whatever else is genuinely interesting. Interdisciplinary connections are the point. Follow curiosity, not a keyword list.
+**Papers/News:** Web search across ArXiv, ACL Anthology, academic venues, tech policy outlets, science journalism. Cast a wide net across the reader's interests. Follow curiosity, not a keyword list.
 
-**Local events:** Search for talks, lectures, panels at MIT, Harvard, their university, BU, Northeastern, Boston Public Library, MFA, ICA, and other venues. University event calendars, eventbrite, local listings.
+**Local events:** Search for talks, lectures, panels at nearby universities, public libraries, museums, and other venues.
 
-**Deadlines:** Read `memory/assignments.md` for upcoming due dates. Mention in header if something's due within 7 days.
+**Deadlines:** Check your assignments/calendar file for upcoming due dates. Mention in header if something's due within 7 days.
 
-**Conversation context:** Read recent `memory/YYYY-MM-DD.md` files for threads to pick up, things the reader mentioned, ongoing projects.
+**Conversation context:** Read recent memory/context files for threads to pick up, things the reader mentioned, ongoing projects.
 
 ## Hard Rules
 - # Add your own hard rules here
@@ -77,15 +91,17 @@ Optional. Not every day. When something personal fits — a connection to a rece
 - Weather and transit go in the header, not their own sections
 
 ## Delivery
-- **Discord:** Post to `#daily-briefing` (channel YOUR_CHANNEL_ID) using the message tool
-- **Email:** Send to reader@gmail.com via Resend API. API key is in `.env` (RESEND_API_KEY). From address: `briefing@mail.example.com`. Use curl:
-  ```bash
-  source .env && curl -s -X POST https://api.resend.com/emails \
-    -H "Authorization: Bearer $RESEND_API_KEY" \
-    -H "Content-Type: application/json" \
-    -d '{"from":"briefing@mail.example.com","to":"reader@gmail.com","subject":"☀️ [subject]","html":"[html content]"}'
-  ```
-- Convert the briefing to simple HTML for email (headers → `<h2>`, bold → `<strong>`, links → `<a href>`, line breaks → `<br>`). Keep it clean — no complex CSS.
+
+### Discord
+Post to your `#daily-briefing` channel (channel YOUR_CHANNEL_ID) using the message tool. Plain markdown — no HTML, no hyperlink syntax beyond Discord's auto-linking. Wrap URLs in `<>` to suppress embeds.
+
+### Email (styled HTML)
+1. Save the briefing as markdown to `briefings/YYYY-MM-DD.md`
+2. Run: `bash send-email.sh briefings/YYYY-MM-DD.md`
+   - This renders through the styled HTML template ("Transmission from North" — monospace, parchment, terminal-letter aesthetic) and sends via Resend
+   - The email version should use real hyperlinks (`[text](url)` in the markdown) wherever possible — link paper titles, author names, institutions, tools. The renderer converts these to styled `<a>` tags.
+
+**Important:** Write the markdown with hyperlinks (`[text](url)`) throughout. Discord will display the raw URLs (which is fine), and the email renderer will convert them to proper clickable links. This is the primary version difference — the email is the rich reading experience.
 
 ## Schedule
 - 7:00 AM ET daily via cron (isolated agentTurn session)

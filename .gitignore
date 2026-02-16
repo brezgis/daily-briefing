@@ -1,1 +1,6 @@
 .env
+briefings/
+node_modules/
+preview-today.html
+preview.png
+render-email.sh
