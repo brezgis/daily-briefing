@@ -5,9 +5,9 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ENV_FILE="$CLAWD_HOME/.env"
-FROM_EMAIL="briefing@mail.brezgis.com"
-TO_EMAIL="REDACTED_EMAIL"
+ENV_FILE="${BRIEFING_ENV_FILE:-.env}"
+FROM_EMAIL="${BRIEFING_FROM:-briefing@mail.yourdomain.com}"
+TO_EMAIL="${BRIEFING_TO:-reader@example.com}"
 
 MD_FILE=""
 DRY_RUN=false
