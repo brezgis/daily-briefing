@@ -71,8 +71,8 @@ The email version uses a styled HTML template with a warm terminal-letter aesthe
 - "TRANSMISSION FROM [YOUR MACHINE]" header (auto-detects hostname, or set `BRIEFING_MACHINE` env var)
 
 The renderer (`render-email.js`) converts briefing markdown to HTML automatically. It handles:
-- `**Bold Title**` → large serif heading
-- `### Small Title` → medium serif heading
+- `## Story Title` or `**Bold Title**` → large serif heading (first two become main stories)
+- `### Small Title` → medium serif heading (or `##` after two main stories)
 - `> blockquote` → styled sidebar quote
 - `[link text](url)` → colored underlined links
 - `**In Brief**` section → labeled quick-hit items

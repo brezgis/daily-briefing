@@ -62,6 +62,10 @@ function renderParas(text, style) {
     if (t.startsWith('> ')) {
       return renderBlockquote(t.replace(/^> ?/gm, ''));
     }
+    if (t.match(/^#{1,3}\s/)) {
+      const heading = t.replace(/^#{1,3}\s*/, '');
+      return `<div style="${S.h3}; margin:20px 0 8px 0;"><b>${mdToHtml(heading)}</b></div>`;
+    }
     return `<p style="margin:0 0 14px 0;">${mdToHtml(t)}</p>`;
   }).join('\n');
 }
@@ -140,10 +144,17 @@ for (const chunk of chunks) {
     continue;
   }
 
-  // Check if starts with ### (small story)
-  if (firstLine.startsWith('### ') || firstLine.startsWith('## ') && storyCount >= 2) {
+  // Check if starts with ## (story) or ### (small story)
+  if (firstLine.startsWith('## ') || firstLine.startsWith('### ')) {
     const title = firstLine.replace(/^#{1,3}\s*/, '');
-    sections.push({ type: 'small', title, body: rest });
+    const isSmall = firstLine.startsWith('### ') || storyCount >= 2;
+    if (isSmall) {
+      sections.push({ type: 'small', title, body: rest });
+    } else {
+      if (!subject) subject = title;
+      storyCount++;
+      sections.push({ type: 'story', title, body: rest });
+    }
     continue;
   }
 
