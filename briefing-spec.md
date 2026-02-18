@@ -85,7 +85,8 @@ Optional. Not every day. When something personal fits — a connection to a rece
 **Conversation context:** Read recent memory/context files for threads to pick up, things the reader mentioned, ongoing projects.
 
 ## Hard Rules
-- # Add your own hard rules here
+- **No recapping shared work.** The reader built these projects with you — she doesn't need a morning summary of what happened last night. The briefing is for *new discoveries*: papers she hasn't read, tools she doesn't know about, rabbit holes she hasn't gone down. Connect to her interests, but don't retell her own story back to her.
+- **Dedup: check `briefings/mentioned.json` before writing.** This file tracks every topic, paper, tool, and resource mentioned in previous briefings. If something appears in the file and its date is within `cooldown_days` (default: 30), don't mention it again. After writing the briefing, append new items to the file. Format: `{"date": "YYYY-MM-DD", "topic": "short description", "section": "story|small-story|in-brief"}`
 - Wrap multiple Discord links in `<>` to suppress embeds
 - No markdown tables on Discord
 - Weather and transit go in the header, not their own sections
