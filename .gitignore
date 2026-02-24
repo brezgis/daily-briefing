@@ -1,6 +1,12 @@
 .env
 briefings/
+talks/
 node_modules/
 preview-today.html
 preview.png
 render-email.sh
+letterpress-mockup.html
+letterpress-mockup.mjml
+talks-template-preview.html
+talks-mentioned.json
+talks-spec.md
