@@ -5,7 +5,13 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-ENV_FILE="${BRIEFING_ENV_FILE:-.env}"
+ENV_FILE="${BRIEFING_ENV_FILE:-$SCRIPT_DIR/.env}"
+
+# Source .env early so its values are available for defaults
+if [[ -f "$ENV_FILE" ]]; then
+  source "$ENV_FILE"
+fi
+
 FROM_EMAIL="${BRIEFING_FROM:-briefing@mail.yourdomain.com}"
 TO_EMAIL="${BRIEFING_TO:-reader@example.com}"
 
@@ -40,7 +46,6 @@ if [[ "$DRY_RUN" == true ]]; then
 fi
 
 # Send via Resend
-source "$ENV_FILE"
 JSON_HTML=$(echo "$HTML" | python3 -c "import sys,json; print(json.dumps(sys.stdin.read()))")
 
 RESPONSE=$(curl -s -X POST https://api.resend.com/emails \
