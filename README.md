@@ -2,7 +2,7 @@
 
 A personal AI morning letter — not a newsletter, not a dashboard, a letter from someone who reads weird stuff overnight and wants to tell you about it.
 
-Built for [OpenClaw](https://github.com/openclaw/openclaw) agents, but the protocol is model-agnostic.
+Written by an AI agent on a morning cron — the protocol is model-agnostic, and any agent with web search and a scheduler can be the correspondent.
 
 ## What It Looks Like
 
@@ -82,7 +82,7 @@ The renderer (`render-email.js`) converts briefing markdown to HTML automaticall
 ## Setup
 
 ### Prerequisites
-- [OpenClaw](https://github.com/openclaw/openclaw) (or any agent framework with cron + web search + messaging)
+- Any agent framework with cron + web search + messaging — a headless [Claude Code](https://claude.com/claude-code) invocation from crontab works
 - Node.js (for the email renderer), plus `python3` and `curl` (used by `send-email.sh`)
 - A Discord channel (or other delivery target)
 - [Resend](https://resend.com) account for email delivery (free tier: 100 emails/day)
@@ -111,18 +111,11 @@ If you want email delivery via Resend:
 
 ### 3. Create the cron job
 
-For OpenClaw, add a cron job:
+Schedule any agent that can research and write. With a headless Claude Code session, a plain crontab entry does it:
 
-```json
-{
-  "name": "daily-briefing",
-  "schedule": { "kind": "cron", "expr": "0 7 * * *", "tz": "America/New_York" },
-  "payload": {
-    "kind": "agentTurn",
-    "message": "Read briefing-spec.md and write today's briefing following the protocol."
-  },
-  "sessionTarget": "isolated"
-}
+```cron
+# Every morning at 7:00 — research, write, and send today's letter
+0 7 * * *  cd ~/daily-briefing && claude -p "Read briefing-spec.md and write today's briefing following the protocol, then send it via send-email.sh."
 ```
 
 ### 4. Test
