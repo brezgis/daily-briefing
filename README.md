@@ -83,7 +83,7 @@ The renderer (`render-email.js`) converts briefing markdown to HTML automaticall
 
 ### Prerequisites
 - [OpenClaw](https://github.com/openclaw/openclaw) (or any agent framework with cron + web search + messaging)
-- Node.js (for the email renderer)
+- Node.js (for the email renderer), plus `python3` and `curl` (used by `send-email.sh`)
 - A Discord channel (or other delivery target)
 - [Resend](https://resend.com) account for email delivery (free tier: 100 emails/day)
 
@@ -144,6 +144,7 @@ bash send-email.sh example-briefing.md
 ├── render-email.js        # Markdown → styled HTML renderer
 ├── send-email.sh          # Render + send via Resend
 ├── example-briefing.md    # Sample output
+├── assets/                # Screenshot for this README
 ├── briefings/             # Generated daily briefings (gitignored)
 └── .env.example           # Environment variable template
 ```

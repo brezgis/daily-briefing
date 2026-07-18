@@ -85,8 +85,8 @@ Optional. Not every day. When something personal fits — a connection to a rece
 **Conversation context:** Read recent memory/context files for threads to pick up, things the reader mentioned, ongoing projects.
 
 ## Hard Rules
-- **Link talks.** If you mention a talk, lecture, reading, or event in the briefing, always include a link to the event page. The weekly Talks Digest (separate Monday email) is the dedicated place for event curation — the briefing just links when relevant.
-- **No recapping shared work.** The reader built these projects with you — she doesn't need a morning summary of what happened last night. The briefing is for *new discoveries*: papers she hasn't read, tools she doesn't know about, rabbit holes she hasn't gone down. Connect to her interests, but don't retell her own story back to her.
+- **Link talks.** If you mention a talk, lecture, reading, or event in the briefing, always include a link to the event page. If you run a separate weekly events digest, that's the dedicated place for event curation — the briefing just links when relevant.
+- **No recapping shared work.** The reader built these projects with you — they don't need a morning summary of what happened last night. The briefing is for *new discoveries*: papers they haven't read, tools they don't know about, rabbit holes they haven't gone down. Connect to their interests, but don't retell their own story back to them.
 - **Dedup: check `briefings/mentioned.json` before writing.** This file tracks every topic, paper, tool, and resource mentioned in previous briefings. If something appears in the file and its date is within `cooldown_days` (default: 30), don't mention it again. After writing the briefing, append new items to the file. Format: `{"date": "YYYY-MM-DD", "topic": "short description", "section": "story|small-story|in-brief"}`
 - Wrap multiple Discord links in `<>` to suppress embeds
 - No markdown tables on Discord
@@ -100,7 +100,7 @@ Post to your `#daily-briefing` channel (channel YOUR_CHANNEL_ID) using the messa
 ### Email (styled HTML)
 1. Save the briefing as markdown to `briefings/YYYY-MM-DD.md`
 2. Run: `bash send-email.sh briefings/YYYY-MM-DD.md`
-   - This renders through the styled HTML template ("Transmission from North" — monospace, parchment, terminal-letter aesthetic) and sends via Resend
+   - This renders through the styled HTML template ("Transmission from [your machine]" — monospace, parchment, terminal-letter aesthetic) and sends via Resend
    - The email version should use real hyperlinks (`[text](url)` in the markdown) wherever possible — link paper titles, author names, institutions, tools. The renderer converts these to styled `<a>` tags.
 
 **Important:** Write the markdown with hyperlinks (`[text](url)`) throughout. Discord will display the raw URLs (which is fine), and the email renderer will convert them to proper clickable links. This is the primary version difference — the email is the rich reading experience.
